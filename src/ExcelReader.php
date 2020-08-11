@@ -147,7 +147,7 @@ class ExcelReader extends Reader
 
     private $limitStep = 500;
 
-    private function setLimitStep($limit)
+    public function setLimitStep($limit)
     {
         $this->limitStep = $limit;
     }
