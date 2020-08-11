@@ -45,3 +45,38 @@ echo '<pre>';
 print_r($arrays);
 die;
 ```
+
+
+# Установка
+Подключим для MODX . Для этого нужно создать файл composer.json (или выполнить composer init) и добавить в него соответстствующие разделы:
+
+```
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/webnitros/readerxlsx"
+    }
+  ],
+  "require": {
+    "webnitros/readerxlsx": "1.*@beta",
+  }
+```
+
+```
+composer install
+```
+
+
+## Подключение через autoload
+
+```
+"autoload": {
+        "psr-4": {
+            "Excel\Xlsx\": "src/"
+        }
+    }
+```
+
+```
+composer dump-autoload -o
+```
