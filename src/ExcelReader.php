@@ -117,7 +117,7 @@ class ExcelReader extends Reader
     {
         if (!$this->reader) {
             // TODO тут шаги передавались
-            $chunkSize = 50;
+            $chunkSize = $this->limitStep;
             try {
 
                 /*if ($cache = $this->getCacheAdapter()) {
@@ -142,6 +142,14 @@ class ExcelReader extends Reader
             return true;
         }
         return false;
+    }
+
+
+    private $limitStep = 500;
+
+    private function setLimitStep($limit)
+    {
+        $this->limitStep = 500;
     }
 
 }
