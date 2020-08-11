@@ -89,10 +89,7 @@ class ExcelReader extends Reader
                 $this->setSeek(-1);
                 return true;
             }
-            echo '<pre>';
-            print_r('[MsieExcelReader] Exception ' . $e->getMessage() . '. Info:'); die;
-            #$this->modx->log(modX::LOG_LEVEL_ERROR, '[MsieExcelReader] Exception ' . $e->getMessage() . '. Info:' . print_r($e, 1));
-            return false;
+            return 'Exception ' . $e->getMessage() . '. Info:';
         }
 
         return true;
@@ -140,10 +137,7 @@ class ExcelReader extends Reader
                 unset($objReader);
 
             } catch (Exception $e) {
-                echo '<pre>';
-                print_r($e->getMessage()); die;
-                $this->modx->log(modX::LOG_LEVEL_ERROR, '[MsieExcelReader] Exception ' . $e->getMessage());
-                return false;
+                return  'Exception ' . $e->getMessage();
             }
             return true;
         }
